@@ -1,4 +1,6 @@
-require "httparty"
+require 'httparty'
+require 'create_operation.rb'
+require 'modify_operation.rb'
 
 class CloudKit
   include HTTParty
@@ -7,7 +9,7 @@ class CloudKit
   format :json
   headers 'Content-Type' => 'application/json'
   
-  debug_output $stdout
+  #debug_output $stdout
   
   attr_writer :session_token
 
