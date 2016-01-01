@@ -36,7 +36,7 @@ class CloudKit
   
   def query(record_type, record_name = nil, filter_by = nil, sort_by = nil, user_options = {})
     query_options = {:recordType => record_type}
-    query_options = {:recordName => record_name} if record_name
+    query_options[:recordName] = record_name if record_name
     query_options[:filterBy] = filter_by if filter_by
     query_options[:sortBy] = sort_by if sort_by
     
