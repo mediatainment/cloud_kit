@@ -49,9 +49,8 @@ class CloudKit
     record_names.each do |record_name|
       records << {:recordName => record_name}
     end
-    query_options = {:records => records}
     
-    options = {:body => {:query => query_options}.to_json, :query => auth_options}
+    options = {:body => {:records => records}.to_json, :query => auth_options}
     options.merge! user_options
     self.class.post("#{uri_base}/records/lookup", options)    
   end
