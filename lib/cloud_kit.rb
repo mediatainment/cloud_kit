@@ -44,7 +44,7 @@ class CloudKit
     self.class.post("#{uri_base}/records/query", options)    
   end
   
-  def lookup(record_names)
+  def lookup(record_names, user_options = {})
     records = []
     record_names.each do |record_name|
       records << {:recordName => record_name}
